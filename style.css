@@ -6,29 +6,28 @@
 
 /* ===== BODY / BACKGROUND WEBSITE ===== */
 
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-
     font-family: Arial, sans-serif;
-
     text-align: center;
 
     /* Background Website */
     background-image: url("asset/background_web.png");
-
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
 
-    background-attachment: fixed;
+    /* Mencegah pull-down refresh */
+    overscroll-behavior-y: none;
 
-    min-height: 100vh;
-
-    margin: 0;
-
-    padding: 0;
-
+    /* Menyesuaikan tinggi layar HP */
+    min-height: 100dvh;
 }
 
 
@@ -364,50 +363,56 @@ button:hover {
 
 /* ===== RESPONSIVE UNTUK LAPTOP / HP ===== */
 
-
-@media(max-width:700px){
-
-
-    #board {
-
-        width:95vw;
-
-        height:95vw;
-
-    }
-
-
-    .box {
-
-        height:auto;
-
-        aspect-ratio:1/1;
-
-        font-size:20px;
-
-    }
-
+@media (max-width: 700px) {
 
     h1 {
-
-        font-size:35px;
-
+        font-size: clamp(24px, 7vw, 35px);
+        margin-top: 15px;
+        margin-bottom: 10px;
     }
 
+    #menu,
+    #game {
+        width: 96vw;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 10px auto;
+    }
 
+    #board {
+        width: min(94vw, 650px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin: 15px auto;
+        border-width: 3px;
+    }
+
+    .box {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        font-size: clamp(11px, 3.5vw, 18px);
+    }
+
+    .game-controls {
+        gap: 3px;
+    }
+
+    .game-controls button {
+        font-size: 14px;
+        padding: 9px 12px;
+        margin: 5px;
+    }
+
+    .dice-container {
+        margin: 15px;
+    }
+
+    .dice {
+        width: 90px;
+        height: 90px;
+        font-size: 65px;
+    }
 }
-.petunjuk {
-
-    text-align:left;
-
-    max-width:600px;
-
-    margin:auto;
-
-    line-height:1.6;
-
-}
-
 
 hr {
 
