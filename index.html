@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ular Tangga Matematika</title>
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+
+<h1>🐍 Ular Tangga Matematika 🎲</h1>
+
+<!-- MENU AWAL -->
+<div id="menu">
+    <h2>📖 Petunjuk Permainan</h2>
+    <div class="petunjuk">
+        <p>1. Permainan dapat dimainkan oleh 2-6 pemain.</p>
+        <p>2. Setiap pemain melempar dadu secara bergantian dengan angka 1-6.</p>
+        <p>3. Pada langkah pertama pemain akan mendapatkan soal matematika pilihan ganda.</p>
+        <p>4. Jika jawaban benar, pemain mendapatkan kesempatan melempar dadu kembali.</p>
+        <p>5. Lemparan kedua tidak mendapatkan soal matematika.</p>
+        <p>6. Dadu angka 6 tidak mendapatkan kesempatan melempar kembali.</p>
+        <p>7. Pemain yang berhenti di tangga akan naik.</p>
+        <p>8. Pemain yang terkena kepala ular akan turun.</p>
+        <p>9. Pemain pertama yang mencapai kotak terakhir menjadi pemenang.</p>
+    </div>
+
+    <hr>
+
+    <h2>👥 Masukkan Nama Pemain</h2>
+    <div class="player-inputs">
+        <input type="text" id="player1" placeholder="Pemain 1">
+        <input type="text" id="player2" placeholder="Pemain 2">
+        <input type="text" id="player3" placeholder="Pemain 3">
+        <input type="text" id="player4" placeholder="Pemain 4">
+        <input type="text" id="player5" placeholder="Pemain 5">
+        <input type="text" id="player6" placeholder="Pemain 6">
+    </div>
+
+    <button onclick="mulaiGame()">🎮 Mulai Permainan</button>
+</div>
+
+<!-- AREA GAME -->
+<div id="game" style="display:none;">
+    <div class="game-header">
+        <h2>Giliran: <span id="giliran"></span></h2>
+        <button id="soundToggle" class="sound-btn" onclick="toggleSuara()" type="button">🔊 Suara ON</button>
+    </div>
+
+    <div id="board"></div>
+
+    <div class="game-controls">
+        <button id="rollButton" onclick="lemparDadu()">🎲 Lempar Dadu</button>
+        <button onclick="selesaiGame()" class="finish-btn">🏁 Selesai / Game Baru</button>
+        <button onclick="restartGame()" id="restartButton" style="display:none;">🔄 Main Lagi</button>
+    </div>
+
+    <div class="dice-container">
+        <div id="dice" class="dice" aria-label="Dadu">⚄</div>
+    </div>
+</div>
+
+<!-- POPUP SOAL PROFESIONAL -->
+<div id="questionBox" class="question-overlay" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="question">
+    <div class="question-modal">
+        <div class="question-player-row">
+            <div class="question-player-label">🎯 Pemain yang menjawab</div>
+            <div id="questionPlayer" class="question-player-name">-</div>
+        </div>
+
+        <h2 id="question"></h2>
+
+        <div id="questionOptions" class="question-options">
+            <button id="A" onclick="jawab('A')"></button>
+            <button id="B" onclick="jawab('B')"></button>
+            <button id="C" onclick="jawab('C')"></button>
+            <button id="D" onclick="jawab('D')"></button>
+        </div>
+
+        <div id="answerFeedback" class="answer-feedback" style="display:none;" aria-live="polite">
+            <div id="feedbackIcon" class="feedback-icon"></div>
+            <div id="feedbackTitle" class="feedback-title"></div>
+            <div id="feedbackText" class="feedback-text"></div>
+        </div>
+    </div>
+</div>
+
+<!-- NOTIFIKASI ULAR / TANGGA -->
+<div id="boardEvent" class="board-event" style="display:none;" aria-live="polite">
+    <div id="boardEventIcon" class="board-event-icon"></div>
+    <div>
+        <div id="boardEventTitle" class="board-event-title"></div>
+        <div id="boardEventText" class="board-event-text"></div>
+    </div>
+</div>
+
+<!-- POPUP PEMENANG -->
+<div id="winnerOverlay" class="winner-overlay" style="display:none;" role="dialog" aria-modal="true">
+    <div class="winner-card">
+        <div class="winner-trophy">🏆</div>
+        <div class="winner-kicker">PERMAINAN SELESAI</div>
+        <h2>Selamat!</h2>
+        <div id="winnerName" class="winner-name"></div>
+        <p>berhasil mencapai kotak 100 dan memenangkan Ular Tangga Matematika.</p>
+        <button onclick="restartGame()" class="winner-restart">🔄 Main Lagi</button>
+    </div>
+</div>
+
+<div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+
+<script src="js/snake-ladder.js?v=4"></script>
+<script src="js/player.js?v=4"></script>
+<script src="js/movement.js?v=4"></script>
+<script src="js/soal-v4.js?v=4"></script>
+<script src="script.js?v=4"></script>
+</body>
+</html>

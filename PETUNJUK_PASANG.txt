@@ -1,0 +1,35 @@
+ULAR TANGGA MATEMATIKA V4
+=========================
+
+FITUR BARU
+1. Popup soal profesional: nama pemain, level, nomor/topik soal, pilihan A-E.
+2. Feedback jawaban benar/salah langsung di popup, tanpa alert jawaban.
+3. Animasi dadu, pion berjalan, naik tangga, turun karena ular, dan sorotan objek ular/tangga.
+4. Suara bawaan Web Audio: dadu, langkah, soal, benar, salah, ular, tangga, menang.
+5. Tombol Suara ON/OFF.
+6. Popup pemenang + confetti + suara kemenangan.
+7. Tampilan matriks V3 tetap dipertahankan.
+
+CARA PASANG
+1. BACKUP project lama terlebih dahulu.
+2. JANGAN hapus folder asset milik Anda. Paket ini tidak menyertakan gambar asset.
+3. Dari paket V4 ini, salin/ganti file berikut di project Anda:
+   - index.html
+   - style.css
+   - script.js
+   - js/movement.js
+   - js/player.js
+   - js/snake-ladder.js
+   - js/soal-v4.js
+4. Pastikan folder asset lama tetap berada di root project, karena game masih memakai:
+   background_web.png, player1.png-player6.png, ular1.png/ular2.png, tangga1.png/tangga2.png.
+5. soal-v3.js atau soal.js lama boleh tetap ada, tetapi index.html V4 menggunakan js/soal-v4.js.
+6. Buka game, lalu tekan Ctrl+Shift+R (atau Ctrl+F5) sekali agar cache lama dibersihkan.
+7. Jika membuka F12 > Console, harus terlihat:
+   SOAL-V4-INTERAKTIF-AKTIF
+   ULAR-TANGGA-V4-INTERAKTIF-AKTIF
+
+CATATAN
+- Feedback jawaban sudah tidak memakai alert().
+- Alert sederhana masih dipakai untuk validasi minimal 2 pemain.
+- Confirm masih dipakai untuk melanjutkan game lama dan mengakhiri permainan secara manual.
