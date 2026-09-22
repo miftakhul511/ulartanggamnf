@@ -3,6 +3,11 @@
    STYLE CSS (RESPONSIF UTUH)
 ================================ */
 
+html, body {
+    touch-action: manipulation auto !important;
+    overflow-y: auto !important;
+    height: auto !important;
+}
 :root {
     --v4-primary: #2563eb;
     --v4-primary-dark: #1d4ed8;
